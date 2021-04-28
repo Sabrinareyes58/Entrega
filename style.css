@@ -1,0 +1,176 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Alegreya SC';
+	font-size: 1.2rem;
+	min-height: 100%;
+	background-color: #999999;
+}
+
+.grid-container {
+	display: grid;
+	grid-gap: 10px;
+	grid-template: 
+		"H" auto
+		"N" auto
+		"M" auto
+		"A" auto
+		"F" auto;
+}
+
+.grid-container > * {
+	box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
+	border-radius: 4px;
+	padding: 10px;
+	/*text-align: center;*/
+}
+
+.grid-nav {
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+}
+
+.grid-main {
+	display: grid;
+	/*grid-template-columns: auto auto;
+	grid-template-rows: auto auto;*/
+}
+
+
+header {
+	grid-area:H;
+	background-color: royalblue;
+}
+
+nav {
+	grid-area:N;
+	background-color: royalblue;
+}
+
+section {
+	grid-area:M;
+	background-color: white;
+}
+
+aside {
+	grid-area:A;
+	background-color: royalblue;
+}
+
+footer {
+	grid-area:F;
+	background-color: royalblue;
+}
+
+@media (min-width: 640px) {
+	.grid-container {
+		grid-template:
+		"H  H" auto
+		"N  N" auto
+		"S  A" auto
+		"F  F" auto /
+		65% 35% ;
+	}
+}
+
+@media (min-width: 768px) {
+	.grid-container {	
+		grid-template:
+		"H  H  H" auto
+		"N  M  A" auto
+		"F  F  F" auto /
+		15% 55% 30%;
+	}
+	.grid-nav {
+		display: grid;
+		grid-template-columns: auto;
+        grid-template-rows: repeat(5,2em);
+    }
+}
+
+.nav-item {
+	color: white;
+}
+
+.nav-item:hover {
+	color: black;
+}
+
+footer ul li {
+	color: violet;
+	text-align: center;
+}
+
+.container{
+	margin: auto;
+	background-color: white;
+	width: 800px;
+	padding: 30px;
+}
+
+ul, li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.slider{
+	position: relative;
+	width: 770px;
+	height: 300px;
+}
+
+ul.slider li{
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	width: inherit;
+	height: inherit;
+	background-color: white;
+	transition: opacity .5s;
+}
+
+ul.slider li img{
+	width: 95%;
+    height: 300px;
+    object-fit: cover;
+}
+
+ul.slider li:first-child{
+	opacity: 1;
+}
+
+ul.slider li:target{
+	opacity: 1;
+}
+
+.menu{
+  text-align: center;
+  margin: 20px;
+}
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+}
+
+.menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  border-radius: 100%;
+}
